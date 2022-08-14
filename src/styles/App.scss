@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://use.typekit.net/zfc4puj.css');
 
 // variables
 @import './variables/colors';
@@ -11,7 +11,7 @@
 
 // custom css
 * {
-  font-family: 'Lato', sans-serif !important;
+  font-family: "sofia-pro-soft" !important;
 }
 
 *,
@@ -91,4 +91,33 @@ body {
   font-size: 0.875rem;
   line-height: 20px;
   font-weight: 600;
+}
+
+
+// ant-input
+.ant-input {
+  height: 56px;
+  border: 1px solid #E5E9F3;
+  border-radius: 12px;
+}
+
+// ant-btn-link
+.ant-btn-link {
+  font-weight: 500;
+  color: $theme-primary;
+}
+
+.ant-input-affix-wrapper {
+  padding: 0 15px;
+  border-radius: 12px;
+}
+
+.ant-form-item-label label {
+  font-size: 16px;
+  color: rgba(30, 44, 79, 0.64);
+}
+
+// btn-none
+.btn-none {
+  border: none;
 }

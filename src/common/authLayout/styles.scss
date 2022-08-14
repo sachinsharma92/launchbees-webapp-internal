@@ -1,0 +1,42 @@
+// variables
+@import '../../styles/variables/colors';
+@import '../../styles/variables/mixins';
+
+// Auth Layout Style
+.auth-layout-style {
+  .section-color {
+    background: $theme-primary;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 64px;
+    overflow: hidden;
+
+
+    .logo {
+      margin-bottom: 78px;
+    }
+
+    .description {
+      margin: 0 0 10px;
+      text-transform: uppercase;
+      color: $white;
+      font-weight: 600;
+    }
+
+    .title2-style {
+      color: $white;
+      font-size: 40px;
+      margin-top: 0 !important;
+
+      span {
+        color: $theme-warning;
+      }
+    }
+
+    .img-style {
+      width: 490px;
+    }
+  }
+}

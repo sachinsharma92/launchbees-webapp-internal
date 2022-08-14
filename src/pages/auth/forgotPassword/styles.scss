@@ -1,0 +1,72 @@
+// variables
+@import '../../../styles/variables/colors';
+@import '../../../styles/variables/mixins';
+
+// Auth Layout Style
+.forgot-section-style {
+  padding: 100px;
+  height: 100vh;
+  overflow-x: scroll;
+
+  .btn-none {
+    margin-bottom: 20px;
+  }
+
+  .button-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+
+    .description {
+      font-size: 16px;
+    }
+  }
+
+  .ant-btn-round {
+    width: 100%;
+    border-radius: 32px;
+    height: 64px;
+    font-weight: 400;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      margin-right: 17px;
+    }
+  }
+
+  .btn-outline-primary {
+    border: 1px solid rgba(30, 44, 79, 0.92);
+  }
+
+
+  .description {
+    margin-top: 16px;
+    max-width: 90%;
+  }
+
+  .button-section-secondary {
+
+    .ant-typography {
+      font-size: 20px;
+      text-align: center;
+      margin-top: 26px;
+    }
+  }
+
+  .text-sec {
+    text-align: right;
+
+    .ant-btn-link {
+      margin-top: 30px;
+    }
+
+    .ant-typography {
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+}

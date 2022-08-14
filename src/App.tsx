@@ -8,6 +8,7 @@ import './styles/css/antd.css';
 import './styles/App.scss';
 
 const { store, persistor } = perisistStore;
+
 function App() {
   return (
     <Provider store={store}>
@@ -21,30 +22,3 @@ function App() {
 }
 
 export default App;
-
-// import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Kernify React Template
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://www.kernify.com"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Kernify Creation Pvt. Limited
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
