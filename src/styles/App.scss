@@ -30,6 +30,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+// theme-layout-main
+.theme-layout-main {
+  min-height: 100vh;
+  width: 100%;
+  background: $white;
+
+  .site-content {
+    padding: 65px;
+  }
+}
+
+
 #root {
   // height: 100%;
 }
@@ -93,6 +105,49 @@ body {
   font-weight: 600;
 }
 
+// ButtonS
+.ant-btn-default {
+  background: #EBEFFF;
+  border-radius: 8px;
+  width: 100%;
+  height: 58px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover {
+    background: #EBEFFF;
+  }
+}
+
+.alert-info {
+  border: none;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), #0EA8FF;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  position: relative;
+  border-radius: 4px;
+  font-size: 20px;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7px;
+    height: 100%;
+    border-radius: 8px 0px 0px 8px;
+    background-color: #0EA8FF;
+    content: '';
+  }
+
+  span {
+    color: #0EA8FF;
+    margin-left: 5px;
+  }
+}
 
 // ant-input
 .ant-input {

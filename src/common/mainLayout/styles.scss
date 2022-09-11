@@ -1,0 +1,95 @@
+// variables
+@import '../../styles/variables/colors';
+@import '../../styles/variables/mixins';
+
+.horizontal-navigation {
+  background: $white;
+  border-bottom: 1px solid #E5E9F3;
+
+  .ant-menu-horizontal {
+    display: flex;
+    justify-content: flex-end;
+    border: none;
+  }
+
+  .icon-style img {
+    object-fit: contain;
+  }
+
+}
+
+// theme sidebar
+.theme-sidebar {
+  background: $white;
+  min-width: 242px !important;
+  border-right: 1px solid #E5E9F3;
+
+  .logo-sec {
+    padding: 57px;
+  }
+
+  .download-btn {
+    margin-bottom: 120px;
+    padding: 0 21px;
+  }
+
+  .ant-btn-default {
+
+    .theme-style {
+      background-color: $theme-primary;
+    }
+  }
+
+  .ant-menu-inline {}
+
+  .icon-style img {
+    object-fit: contain;
+  }
+
+  .ant-menu-inline>.ant-menu-item {
+    height: 48px;
+  }
+
+  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background: linear-gradient(90deg, #EBEFFF 0.83%, rgba(235, 239, 255, 0) 100%);
+  }
+
+  .ant-menu-vertical .ant-menu-item::after,
+  .ant-menu-vertical-left .ant-menu-item::after,
+  .ant-menu-vertical-right .ant-menu-item::after,
+  .ant-menu-inline .ant-menu-item::after {
+    right: auto;
+    left: 0;
+    top: 25%;
+    top: 25%;
+    border-radius: 0px 8px 8px 0px;
+    height: 60%;
+    border-width: 4px;
+  }
+
+  .icon-style {
+    object-fit: contain;
+  }
+
+  .user-btn {
+
+    .ant-btn {
+      position: absolute;
+      bottom: 20px;
+      height: 60px;
+      width: 90%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 0;
+      border: none;
+      border-top: 1px solid #E5E9F3;
+      color: rgba(30, 44, 79, 0.8);
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+}

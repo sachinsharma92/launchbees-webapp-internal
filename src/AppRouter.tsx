@@ -8,7 +8,7 @@ import * as ROUTES from './router/routes';
 /**
  * Screens
  */
-const HomeScreen = lazy(() => import(/* webpackChunkName: "HomeScreen" */ './pages/homeScreen'));
+const HomeScreen = lazy(() => import(/* webpackChunkName: "HomeScreen" */ './pages/home/homeScreen'));
 const LoginScreen = lazy(() => import(/* webpackChunkName: "LoginScreen" */ './pages/auth/login/loginScreen'));
 const SignupScreen = lazy(() => import(/* webpackChunkName: "LoginScreen" */ './pages/auth/signup/signupScreen'));
 const NewLoginScreen = lazy(() => import(/* webpackChunkName: "LoginScreen" */ './pages/auth/newLogin/newLoginScreen'));

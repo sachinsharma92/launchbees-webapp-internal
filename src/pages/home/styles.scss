@@ -1,0 +1,32 @@
+// variables
+@import '../../styles/variables/colors';
+@import '../../styles/variables/mixins';
+
+
+// Homepage style
+.homepage-style {
+  .btn-right {
+    display: flex;
+    justify-content: flex-end;
+  
+    .btn-plus {
+      height: 44px;
+    }
+  }
+
+  .head-section {
+    
+    .description {
+      font-size: 16px;
+      margin-top: 8px;
+    }
+  }
+
+  .alert-info {
+    margin-top: 20px;
+  }
+
+  .table-data {
+    margin-top: 28px;
+  }
+}
