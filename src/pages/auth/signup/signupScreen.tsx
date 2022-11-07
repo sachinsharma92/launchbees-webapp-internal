@@ -5,6 +5,8 @@ import { AppleIcon, GoogleIcon } from '../../../assets/logo';
 
 // Styles
 import './styles.scss';
+import { API_BASE_URL } from '../../../remote/axios';
+import { LOGIN_WITH_GOOGLE } from '../../../remote/apis/apiRoutes';
 
 const { Title, Paragraph } = Typography;
 
@@ -24,6 +26,10 @@ function SignupScreen(props: SignupScreenProps) {
 		console.log('Failed:', errorInfo);
 	};
 
+	const onLoginWithGoogle = () => {
+		window.open(API_BASE_URL+LOGIN_WITH_GOOGLE, '_blank', 'noopener,noreferrer');
+	}
+
 	return (
 		<AuthLayout>
 			<div className='signup-page-section'>
@@ -39,7 +45,7 @@ function SignupScreen(props: SignupScreenProps) {
 					onFinishFailed={onFinishFailed}
 					autoComplete="off"
 				>
-					<Row gutter={16}>
+					{/* <Row gutter={16}>
 						<Col sm={12}>
 							<Form.Item
 								label="First name"
@@ -58,7 +64,7 @@ function SignupScreen(props: SignupScreenProps) {
 								<Input />
 							</Form.Item>
 						</Col>
-					</Row>
+					</Row> */}
 
 					<Form.Item
 						label="Email Address"
@@ -77,14 +83,14 @@ function SignupScreen(props: SignupScreenProps) {
 					</Form.Item>
 
 					<Form.Item name="remember" valuePropName="checked">
-						<Checkbox>By creating an account, I agree to our Terms of use & Privacy Policy </Checkbox>
+						<Checkbox>I agree to our Terms of use & Privacy Policy </Checkbox>
 					</Form.Item>
 
 				</Form>
 
 				<div className="button-section-secondary">
 					<Button shape='round' type='primary'>
-						Sign up
+						Login
 					</Button>
 					<Paragraph>
 						Already have an account? Log in
@@ -92,11 +98,11 @@ function SignupScreen(props: SignupScreenProps) {
 					<Divider plain>OR</Divider>
 				</div>
 				<div className="button-section">
-					<Button shape='round' className='btn-outline-primary' icon={<GoogleIcon />}>
-						Sign up with Google
+					<Button shape='round' className='btn-outline-primary' icon={<GoogleIcon />} onClick={onLoginWithGoogle}>
+						Login with Google
 					</Button>
 					<Button shape='round' className='btn-outline-primary' icon={<AppleIcon />}>
-						Sign up with Apple
+						Login with Apple
 					</Button>
 
 				</div>
