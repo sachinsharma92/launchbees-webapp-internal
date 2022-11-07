@@ -3,6 +3,7 @@ import get from 'lodash/get';
 import { lazy, Suspense, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginSuccess from './pages/auth/loginSuccess/loginSuccess';
 import * as ROUTES from './router/routes';
 
 /**
@@ -24,10 +25,11 @@ const AppRouter = () => {
                 <Router>
                     <Routes>
                         <Route path={ROUTES.HOME_SCREEN} element={<HomeScreen />} />
-                        <Route path={ROUTES.LOGIN_SCREEN} element={<LoginScreen />} />
-                        <Route path={ROUTES.SIGNUP_SCREEN} element={<SignupScreen />} />
+                        <Route path={ROUTES.LOGIN_SCREEN} element={<SignupScreen />} />
+                        <Route path={ROUTES.SIGNUP_SCREEN} element={<LoginScreen />} />
                         <Route path={ROUTES.NEW_LOGIN_SCREEN} element={<NewLoginScreen />} />
                         <Route path={ROUTES.FORGOT_SCREEN} element={<ForgotScreen />} />
+                        <Route path={ROUTES.LOGIN_SUCCESS} element={<LoginSuccess />} />
                     </Routes>
                 </Router>
             </Suspense>
