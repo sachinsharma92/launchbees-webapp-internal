@@ -8,6 +8,7 @@ import { PlusCircleOutlined } from '@ant-design/icons';
 
 // Styles
 import './styles.scss';
+import { Link } from 'react-router-dom';
 
 interface DataType {
 	key: string;
@@ -114,9 +115,11 @@ function HomeScreen() {
 						</Col>
 						<Col sm={10}>
 							<div className="btn-right">
-								<Button type="primary" className='btn-plus'>
-									Add Feature <PlusCircleOutlined />
-								</Button>
+								<Link to="/add-feature">
+									<Button type="primary" className='btn-plus'>
+										Add Feature <PlusCircleOutlined />
+									</Button>
+								</Link>
 							</div>
 						</Col>
 					</Row>
@@ -132,8 +135,8 @@ function HomeScreen() {
 					</Card>
 				</div>
 			</div>
-			{/* HomeScreen
-            <Button onClick={onLogout}>Logout</Button> */}
+			{/* HomeScreen */}
+			<Button onClick={onLogout}>Logout</Button>
 		</MainLayout>
 	)
 }

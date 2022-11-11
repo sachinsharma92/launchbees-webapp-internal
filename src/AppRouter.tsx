@@ -10,6 +10,7 @@ import * as ROUTES from './router/routes';
  * Screens
  */
 const HomeScreen = lazy(() => import(/* webpackChunkName: "HomeScreen" */ './pages/home/homeScreen'));
+const AddFeatureScreen = lazy(() => import(/* webpackChunkName: "AddFeatureScreen" */ './pages/addFeatureScreen/AddFeatureScreen'));
 const LoginScreen = lazy(() => import(/* webpackChunkName: "LoginScreen" */ './pages/auth/login/loginScreen'));
 const SignupScreen = lazy(() => import(/* webpackChunkName: "LoginScreen" */ './pages/auth/signup/signupScreen'));
 const NewLoginScreen = lazy(() => import(/* webpackChunkName: "LoginScreen" */ './pages/auth/newLogin/newLoginScreen'));
@@ -27,6 +28,7 @@ const AppRouter = () => {
                         <Route path={ROUTES.HOME_SCREEN} element={<HomeScreen />} />
                         <Route path={ROUTES.LOGIN_SCREEN} element={<SignupScreen />} />
                         <Route path={ROUTES.SIGNUP_SCREEN} element={<LoginScreen />} />
+                        <Route path={ROUTES.ADD_FEATURE} element={<AddFeatureScreen />} />
                         <Route path={ROUTES.NEW_LOGIN_SCREEN} element={<NewLoginScreen />} />
                         <Route path={ROUTES.FORGOT_SCREEN} element={<ForgotScreen />} />
                         <Route path={ROUTES.LOGIN_SUCCESS} element={<LoginSuccess />} />

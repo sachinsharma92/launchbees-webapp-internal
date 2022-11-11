@@ -1,0 +1,18 @@
+@import "../../styles/variables/colors";
+
+.page-header {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  width: 100%;
+
+  img {
+    min-width: 2.74px;
+    min-height: 21.33px;
+  }
+
+  .header-title {
+    margin: 0;
+    color: rgba($text-color, 92%);
+  }
+}

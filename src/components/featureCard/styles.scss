@@ -1,0 +1,42 @@
+@import "../../styles/variables/colors";
+
+.card {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 59px;
+
+  .ant-card-head {
+    border-bottom: none;
+  }
+
+  .ant-card-body {
+    padding: 10px 11px 55px 32px;
+  }
+
+  .ant-card-head-title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 136.52%;
+    color: rgba($text-color, 92%);
+    padding: 12px 0;
+  }
+
+  .description {
+    color: rgba($text-color, 64%);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px;
+  }
+  .ellipse {
+    position: absolute;
+    width: 109px;
+    height: 109px;
+    right: -13px;
+    top: -21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: rgba($theme-primary, 25%);
+  }
+}

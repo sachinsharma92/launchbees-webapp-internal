@@ -14,7 +14,12 @@ import integrationIcon from "../../assets/icons/integration.svg"
 import guideIcon from "../../assets/icons/guide.svg"
 import questionIcon from "../../assets/icons/question.svg"
 
+import { Link } from 'react-router-dom';
+import ROUTES from '../../router';
+
+// styles
 import "./styles.scss";
+
 
 const { Header, Sider, Content } = Layout;
 
@@ -42,25 +47,34 @@ function MainLayout(props: MainLayoutScreenProps) {
             {
               key: '1',
               icon: <Avatar src={featureIcon} shape="square" className="icon-style" size={18} />,
-              label: 'Feature',
+              label: (
+                <Link to={ROUTES.HOME_SCREEN}>Feature</Link>
+              ),
             },
             {
               key: '2',
               icon: <Avatar src={usersIcon} shape="square" className="icon-style" size={18} />,
-              label: 'Users',
+              label: (
+                <Link to={ROUTES.HOME_SCREEN}>Users</Link>
+              ),
             },
             {
               key: '3',
               icon: <Avatar src={organisationsIcon} shape="square" className="icon-style" size={18} />,
-              label: 'Organisations',
+              label: (
+                <Link to={ROUTES.HOME_SCREEN}>Organisations</Link>
+              ),
             },
             {
               key: '4',
               icon: <Avatar src={settingIcon} shape="square" className="icon-style" size={18} />,
-              label: 'Settings',
+              label: (
+                <Link to={ROUTES.HOME_SCREEN}>Settings</Link>
+              ),
             },
           ]}
-        />
+        >
+        </Menu>
 
         <div className="user-btn">
           <Button type="link"><Avatar src="https://joeschmoe.io/api/v1/random" size={40}>M</Avatar>Jane Smith <Avatar src={arrowIcon} className="icon-style" size={18} /></Button>

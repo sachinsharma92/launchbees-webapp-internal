@@ -1,0 +1,149 @@
+@import "../../styles/variables/colors";
+
+.add-feature-style {
+  .feature-header {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 28px;
+
+    img {
+      min-width: 2.74px;
+      min-height: 21.33px;
+    }
+
+    .feature-title {
+      margin: 0;
+      color: rgba($text-color, 92%);
+      font-size: 28px;
+    }
+  }
+
+  .instruction {
+    font-weight: 400;
+    font-size: 16px;
+    max-width: 596px;
+    line-height: 24px;
+    color: rgba($text-color, 64%);
+  }
+}
+
+.feature-form {
+  display: flex;
+
+  .ant-form {
+    max-width: 598px;
+  }
+  .feature-id {
+    .field-head {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .field-copy {
+    height: 59px;
+    display: flex;
+    align-items: center;
+    background: #f8f9fb;
+    border-radius: 8px;
+    padding: 17px 22px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    justify-content: flex-start;
+    gap: 15px;
+    &:hover {
+      span {
+        color: rgba($text-color, 92%);
+      }
+    }
+    &:focus {
+      span {
+        color: rgba($text-color, 92%);
+      }
+    }
+  }
+  .feature-input-title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    color: rgba($text-color, 64%);
+    gap: 3px;
+  }
+
+  .field-input {
+    margin-top: 6px;
+    height: 59px;
+    background-color: $white;
+    transition: all 0.5s;
+    &:focus {
+      bottom: 0px;
+      background: #ffffff;
+      border: 2px solid $theme-primary;
+      outline: none;
+      box-shadow: none;
+      border-radius: 8px;
+    }
+
+    &:hover {
+      border: 2px solid $theme-primary;
+    }
+    &::placeholder {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: rgba($text-color, 32%);
+    }
+  }
+
+  .disabled-input {
+    &:focus {
+      bottom: 0px;
+      background: #ffffff;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      border-radius: 8px;
+    }
+    &:hover {
+      border: 1px solid rgba($text-color, 12%);
+    }
+    &::placeholder {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: rgba($text-color, 92%);
+    }
+  }
+
+  .warning-icons {
+    width: 14px;
+    height: 14px;
+  }
+  .status-toggle {
+    display: flex;
+    justify-content: space-between;
+    .status-check {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .ant-switch {
+      background: $theme-gray;
+    }
+
+    .ant-switch-checked {
+      background-color: $theme-primary;
+    }
+  }
+}
+
+.feature-container {
+  flex-direction: column;
+  justify-content: flex-end;
+}
