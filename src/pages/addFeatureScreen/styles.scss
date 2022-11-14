@@ -9,8 +9,8 @@
     padding-bottom: 28px;
 
     img {
-      min-width: 2.74px;
-      min-height: 21.33px;
+      width: 20.74px;
+      height: 21.33px;
     }
 
     .feature-title {
@@ -39,6 +39,32 @@
     .field-head {
       display: flex;
       justify-content: space-between;
+    }
+
+    .analytics {
+      display: flex;
+      align-items: center;
+      position: relative;
+      .field-input {
+        display: inline-flex;
+        position: relative;
+        background-color: $gray-f9;
+        border: 1px solid $border-primary;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .field-input[value="advance_analytics"] {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: rgba($text-color, 92%);
+      }
+      img {
+        width: 12px;
+        height: 13.33px;
+        position: absolute;
+        transform: translate(160px, 5px);
+      }
     }
   }
 
@@ -146,4 +172,10 @@
 .feature-container {
   flex-direction: column;
   justify-content: flex-end;
+}
+
+// Feature-created-layout
+
+.feature-created-section {
+  background-color: red;
 }

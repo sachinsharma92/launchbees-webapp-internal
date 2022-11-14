@@ -34,7 +34,6 @@ function LoginScreen(props: LoginScreenProps) {
 	if (isLoggedIn) {
 		return <Navigate to={searchParams.get("redirect") || ROUTES.HOME_SCREEN} />;
 	}
-
 	return (
 		<div>
 			LoginScreen

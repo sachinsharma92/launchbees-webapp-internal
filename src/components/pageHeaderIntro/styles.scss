@@ -6,13 +6,11 @@
   align-items: center;
   width: 100%;
 
-  img {
-    min-width: 2.74px;
-    min-height: 21.33px;
-  }
-
   .header-title {
     margin: 0;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 136.02%;
     color: rgba($text-color, 92%);
   }
 }
