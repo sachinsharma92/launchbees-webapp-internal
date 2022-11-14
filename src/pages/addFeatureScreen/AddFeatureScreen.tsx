@@ -1,20 +1,22 @@
 import { useState } from "react"
 import MainLayout from '../../common/mainLayout'
-import { Col, Form, Input, Row, Switch, Button, message, Alert, Tabs } from 'antd'
+import { Col, Form, Input, Row, Switch, Button, Alert, Tabs, Typography, Tooltip, Card, Select } from 'antd'
 import leftArrow from "../../assets/icons/arrow-left.svg"
-import copy_icon from "../../assets/icons/copy.svg"
 import depend_icon from "../../assets/icons/depend-icon.svg"
 import PageHeaderIntro from '../../components/pageHeaderIntro/PageHeaderIntro'
 import SelectTag from '../../components/selectTag/SelectTag'
 import FeatureCard from '../../components/featureCard/FeatureCard'
-import { featureCard } from './data'
+import { featureCard, packages_cmd } from './data'
 import { Link } from "react-router-dom"
 import { HOME_SCREEN } from "../../router/routes"
-
+import { CopyOutlined } from "@ant-design/icons"
+import CopyField from "../../components/copyField/CopyField"
+import share_icon from "../../assets/icons/share.svg"
 // styles
 import "./styles.scss"
 
 const { TabPane } = Tabs  //Antd Tabs
+const { Paragraph } = Typography
 
 const AddFeatureScreen = () => {
 
@@ -38,6 +40,10 @@ const AddFeatureScreen = () => {
     console.log(`switch to ${checked}`);
   };
 
+
+  const teamChange = (value: string) => {
+    console.log(`selected ${value}`);
+  };
   // filtered Tabs===========
 
   const onChange = (key: any) => {
@@ -45,6 +51,7 @@ const AddFeatureScreen = () => {
 
   }
 
+  const onSearch = (value: string) => console.log(value);
 
 
 
@@ -55,18 +62,20 @@ const AddFeatureScreen = () => {
         <Alert
           message="New Feature Flag created."
           type="success"
+          showIcon
           closable
           style={{ width: 387 }}
         />
-        <Row gutter={[82, 0]} className="feature-created-section">
+        <Row gutter={[77, 0]} className="feature-created-section">
           <Col md={12}>
-            <Row gutter={[0, 16]}>
+            <Row>
               <Col md={24}>
                 <div className="breadcrumbs">
-
+                  <span>Feature</span>/<span>Feature Code</span>
                 </div>
                 <div className="feature-created-header">
                   <PageHeaderIntro title="Copy code to create Feature Flag" />
+                  <Paragraph className="description">Use this detail pages to connect launchbees with your Application.</Paragraph>
                 </div>
               </Col>
               <Col md={24} className="feature-tabs">
@@ -79,12 +88,68 @@ const AddFeatureScreen = () => {
                     Content of Tab Pane 1
                   </TabPane>
                   <TabPane tab="React" key="2">
-                    Content of Tab Pane 2
+                    <div className="packages-to-copy">
+                      {
+                        packages_cmd?.map((curElm, i) => {
+                          return (
+                            <CopyField key={i} title={curElm.package_title} cmdVal={curElm.code_cmd} />
+
+                          )
+                        })
+
+                      }
+                    </div>
                   </TabPane>
                   <TabPane tab="React Native" key="3">
                     Content of Tab Pane 3
                   </TabPane>
                 </Tabs>
+              </Col>
+            </Row>
+          </Col>
+          <Col md={12}>
+            <Row gutter={[0, 21]} className="share-card-container">
+              <Col className='code-card'>
+                <Card style={{ width: 385 }} extra={<img className='card-image' src={share_icon} alt="img" />} title="Invite your Engineering Team" className="my-card">
+                  <Paragraph className="detail description">Share the invite to your enginering team.</Paragraph>
+                  <div className="card-input">
+                    <Input defaultValue={"ayush.prshr9@gmail.com"} />
+                    <div className="team-select">
+                      <Select
+                        defaultValue="Admin"
+                        style={{
+                          width: 100,
+                        }}
+                        onChange={teamChange}
+                        options={[
+                          {
+                            value: 'admin',
+                            label: 'Admin',
+                          },
+                          {
+                            value: 'user',
+                            label: 'User',
+                          },
+                        ]}
+                      />
+                    </div>
+                  </div>
+                  <Button type="primary" className="btn- btn-invite">Invite</Button>
+                </Card>
+              </Col>
+              <Col className='code-card'>
+                <Card style={{ width: 385 }} extra={<img className='card-image' src={share_icon} alt="img" />} title="Invite your Engineering Team" className="my-card">
+                  <Paragraph className="detail description">You can share the code snippet from here.</Paragraph>
+                  <div className="card-input search-card">
+                    <Input.Search
+                      placeholder="Enter email"
+                      allowClear
+                      enterButton="Search"
+                      size="large"
+                      onSearch={onSearch}
+                    />
+                  </div>
+                </Card>
               </Col>
             </Row>
           </Col>
@@ -143,8 +208,18 @@ const AddFeatureScreen = () => {
                       </div>
                     </div>
                     <div className="analytics">
-                      <Input type="button" value={"advance_analytics"} className='field-input' />
-                      <img src={copy_icon} alt="copy-icon" />
+                      {/* <Input type="button" value={"advance_analytics"} className='field-input' />
+                      <img src={copy_icon} alt="copy-icon" /> */}
+                      {/* <Input.Group compact> */}
+                      <Input
+
+                        defaultValue="advance_analytics"
+                        className='field-input copy-text'
+                      />
+                      <Tooltip title="copy url">
+                        <Button icon={<CopyOutlined />} />
+                      </Tooltip>
+                      {/* </Input.Group> */}
                     </div>
                   </div>
                 </Form.Item>

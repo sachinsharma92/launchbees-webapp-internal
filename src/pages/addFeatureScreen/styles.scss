@@ -45,52 +45,38 @@
       display: flex;
       align-items: center;
       position: relative;
-      .field-input {
-        display: inline-flex;
-        position: relative;
-        background-color: $gray-f9;
-        border: 1px solid $border-primary;
-        border-radius: 8px;
-        cursor: pointer;
-      }
-      .field-input[value="advance_analytics"] {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-        color: rgba($text-color, 92%);
-      }
-      img {
-        width: 12px;
-        height: 13.33px;
+
+      .ant-btn-default {
+        background-color: transparent;
+        width: auto;
         position: absolute;
-        transform: translate(160px, 5px);
+        transform: translate(140px, 3px);
+
+        .anticon-copy {
+          svg {
+            width: 12px;
+            height: 13.3px;
+            font-weight: bold;
+            color: rgba($text-color, 92%);
+          }
+        }
+      }
+
+      .ant-btn {
+        box-shadow: none;
+      }
+
+      .copy-text {
+        &:focus {
+          border: 1px solid $border-primary;
+        }
+        &:hover {
+          border: 1px solid $border-primary;
+        }
       }
     }
   }
 
-  .field-copy {
-    height: 59px;
-    display: flex;
-    align-items: center;
-    background: #f8f9fb;
-    border-radius: 8px;
-    padding: 17px 22px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    justify-content: flex-start;
-    gap: 15px;
-    &:hover {
-      span {
-        color: rgba($text-color, 92%);
-      }
-    }
-    &:focus {
-      span {
-        color: rgba($text-color, 92%);
-      }
-    }
-  }
   .feature-input-title {
     font-weight: 400;
     font-size: 14px;
@@ -177,5 +163,144 @@
 // Feature-created-layout
 
 .feature-created-section {
-  background-color: red;
+  // background-color: red;
+
+  .breadcrumbs {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: rgba($text-color, 64%);
+    span {
+      &:nth-child(2) {
+        color: $theme-primary;
+      }
+    }
+  }
+}
+
+.feature-created-header {
+  .header-title {
+    padding-top: 8px;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 136.02%;
+  }
+
+  .description {
+    padding-top: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba($text-color, 82%);
+  }
+}
+
+.feature-tabs {
+  margin-top: 15px;
+
+  .ant-tabs {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba($text-color, 92%);
+
+    .ant-tabs-tab {
+      padding: 15px 0;
+    }
+
+    .ant-tabs-nav::before {
+      border: 2px solid $border-primary;
+    }
+
+    .ant-tabs-ink-bar {
+      height: 3px;
+    }
+  }
+}
+
+// Package to copy react-tab
+.packages-to-copy {
+  max-width: 554px;
+}
+
+.share-card-container {
+  .my-card {
+    .ant-card-head-title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 136.52%;
+      color: $text-color;
+      padding: 0;
+    }
+
+    .detail {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 23px;
+      color: rgba($text-color, 92%);
+    }
+
+    .btn-invite {
+      height: 38px;
+      padding: 0 24px;
+    }
+  }
+}
+
+.ant-card-head {
+  height: 88px;
+  display: flex;
+  .ant-card-head-wrapper {
+    // padding: 24px;
+    flex-direction: row-reverse;
+    gap: 8px;
+  }
+}
+
+.card-input {
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  background: $gray-100;
+  margin-bottom: 16px;
+
+  .ant-input {
+    border: none;
+    background: transparent;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .team-select {
+    .ant-select-selector {
+      background: transparent;
+    }
+
+    .ant-select-focused:not(.ant-select-disabled)
+      .ant-select:not(.ant-select-customize-input)
+      .ant-select-selector {
+      border-color: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.search-card {
+  margin: 0;
+  display: block;
+  .ant-input-group {
+    background-color: $gray-100;
+    height: 38px;
+
+    .ant-input-affix-wrapper {
+      background-color: $gray-100;
+      border-radius: 6px;
+      box-shadow: none;
+      border: none;
+    }
+  }
 }

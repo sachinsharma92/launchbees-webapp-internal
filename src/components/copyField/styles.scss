@@ -1,0 +1,57 @@
+@import "../../styles/variables/colors";
+
+.copy-field {
+  .copy-field-header {
+    .package-title {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 136.02%;
+      color: rgba($text-color, 64%);
+      margin-bottom: 16px;
+    }
+
+    .ant-input-group {
+      max-width: 468px;
+      display: flex;
+      border: 1px solid gray;
+      height: 59px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      border-radius: 8px;
+      background: $gray-f9;
+      border: none;
+
+      .ant-input {
+        background: $gray-f9;
+        border: none;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+
+        color: rgba($text-color, 92%);
+        &:hover {
+          border: none;
+        }
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      .ant-btn {
+        display: flex;
+        align-items: center;
+        width: auto;
+        padding: 0 20px;
+
+        .anticon-copy {
+          &:hover {
+            color: rgba($text-color, 92%);
+          }
+        }
+      }
+      .ant-btn-default {
+        background: transparent;
+      }
+    }
+  }
+}

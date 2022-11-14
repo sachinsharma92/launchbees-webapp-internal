@@ -13,3 +13,20 @@ export const featureCard = [
         icon: information
     },
 ]
+
+
+
+export const packages_cmd = [
+    {
+        package_title: "a. Use create - react - app to create a new react application.",
+        code_cmd: "npx create-react-app hello-react && cd hello react",
+    },
+    {
+        package_title: "b. Install the launchbees SDK:",
+        code_cmd: "npm install -- save launchbees-react-client-sdk@1.0",
+    },
+    {
+        package_title: "c. In App.js , import LBimporter",
+        code_cmd: "import { withLaunchBes | from ‘ launchbees-react-client-sdk’ import Helloworld from ‘/.nHelloWorld’;",
+    },
+]
