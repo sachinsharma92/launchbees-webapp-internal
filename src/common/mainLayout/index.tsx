@@ -10,6 +10,8 @@ import homeIcon from "../../assets/icons/home.svg"
 import usersIcon from "../../assets/icons/users.svg"
 import organisationsIcon from "../../assets/icons/organisations.svg"
 import settingIcon from "../../assets/icons/setting.svg"
+import upgradeIcon from "../../assets/icons/upgrade.svg"
+import docsIcon from "../../assets/icons/docs.svg"
 
 import integrationIcon from "../../assets/icons/integration.svg"
 import guideIcon from "../../assets/icons/guide.svg"
@@ -29,7 +31,9 @@ interface MainLayoutScreenProps {
 }
 
 function MainLayout(props: MainLayoutScreenProps) {
+
   const [collapsed, setCollapsed] = useState(false);
+
   return (
     <Layout>
       <Sider className='theme-sidebar'>
@@ -96,18 +100,28 @@ function MainLayout(props: MainLayoutScreenProps) {
             items={[
               {
                 key: '1',
-                icon: <Avatar src={guideIcon} shape="square" className="icon-style" size={15} />,
-                label: 'Guide',
+                icon: <Avatar src={upgradeIcon} shape="square" className="icon-style" size={15} />,
+                label: 'Upgrade',
               },
               {
                 key: '2',
-                icon: <Avatar src={integrationIcon} shape="square" className="icon-style" size={15} />,
-                label: 'Integration',
+                icon: <Avatar src={guideIcon} shape="square" className="icon-style" size={15} />,
+                label: 'Updates',
               },
               {
                 key: '3',
+                icon: <Avatar src={docsIcon} shape="square" className="icon-style" size={15} />,
+                label: 'Docs',
+              },
+              {
+                key: '4',
                 icon: <Avatar src={questionIcon} shape="square" className="icon-style" size={15} />,
                 label: 'FAQ',
+              },
+              {
+                key: '5',
+                icon: <Avatar src={docsIcon} shape="square" className="icon-style" size={15} />,
+                label: 'Settings',
               },
             ]}
           />
