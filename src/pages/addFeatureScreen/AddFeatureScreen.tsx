@@ -66,15 +66,15 @@ const AddFeatureScreen = () => {
           closable
           style={{ width: 387 }}
         />
+        <div className="breadcrumbs">
+          <span>Feature</span>/<span>Feature Code</span>
+        </div>
         <Row gutter={[77, 0]} className="feature-created-section">
           <Col md={12}>
             <Row>
               <Col md={24}>
-                <div className="breadcrumbs">
-                  <span>Feature</span>/<span>Feature Code</span>
-                </div>
                 <div className="feature-created-header">
-                  <PageHeaderIntro title="Copy code to create Feature Flag" />
+                  <PageHeaderIntro title="SDK Integration" />
                   <Paragraph className="description">Use this detail pages to connect launchbees with your Application.</Paragraph>
                 </div>
               </Col>
@@ -291,11 +291,11 @@ const AddFeatureScreen = () => {
             </Col>
             {/* Featured-cards */}
             <Col md={12}>
-              <Row className='feature-container'>
+              <Row gutter={[0, 40]} className='feature-container'>
                 {
                   featureCard?.map((curElm, i) => {
                     return (
-                      <Col md={12} sm={12} key={i}>
+                      <Col key={i} className="feature-card feature__flag-dependency">
                         <FeatureCard title={curElm.title} para={curElm.description} para1={curElm.description2} img_url={curElm.icon} />
                       </Col>
                     )
