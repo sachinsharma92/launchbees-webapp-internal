@@ -14,6 +14,7 @@ import CopyField from "../../components/copyField/CopyField"
 import share_icon from "../../assets/icons/share.svg"
 // styles
 import "./styles.scss"
+import Breadcrumb from "../../components/breadcrumb/Breadcrumb"
 
 const { TabPane } = Tabs  //Antd Tabs
 const { Paragraph } = Typography
@@ -66,9 +67,9 @@ const AddFeatureScreen = () => {
           closable
           style={{ width: 387 }}
         />
-        <div className="breadcrumbs">
-          <span>Feature</span>/<span>Feature Code</span>
-        </div>
+        {/* Breadcrumb */}
+        <Breadcrumb head={"Feature"} sub_head={"Feature Code"} />
+        {/*  */}
         <Row gutter={[77, 0]} className="feature-created-section">
           <Col md={12}>
             <Row>

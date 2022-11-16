@@ -1,10 +1,10 @@
 // variables
-@import '../../styles/variables/colors';
-@import '../../styles/variables/mixins';
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
 
 .horizontal-navigation {
-  background: $white;
-  border-bottom: 1px solid #E5E9F3;
+  background: $white !important;
+  border-bottom: 1px solid #e5e9f3;
 
   .ant-menu-horizontal {
     display: flex;
@@ -15,14 +15,13 @@
   .icon-style img {
     object-fit: contain;
   }
-
 }
 
 // theme sidebar
 .theme-sidebar {
-  background: $white;
+  background: $white !important;
   min-width: 242px !important;
-  border-right: 1px solid #E5E9F3;
+  border-right: 1px solid #e5e9f3;
 
   .logo-sec {
     padding: 57px;
@@ -34,24 +33,28 @@
   }
 
   .ant-btn-default {
-
     .theme-style {
       background-color: $theme-primary;
     }
   }
 
-  .ant-menu-inline {}
+  .ant-menu-inline {
+  }
 
   .icon-style img {
     object-fit: contain;
   }
 
-  .ant-menu-inline>.ant-menu-item {
+  .ant-menu-inline > .ant-menu-item {
     height: 48px;
   }
 
   .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-    background: linear-gradient(90deg, #EBEFFF 0.83%, rgba(235, 239, 255, 0) 100%);
+    background: linear-gradient(
+      90deg,
+      #ebefff 0.83%,
+      rgba(235, 239, 255, 0) 100%
+    );
   }
 
   .ant-menu-vertical .ant-menu-item::after,
@@ -72,7 +75,6 @@
   }
 
   .user-btn {
-
     .ant-btn {
       position: absolute;
       bottom: 20px;
@@ -86,7 +88,7 @@
       justify-content: space-between;
       border-radius: 0;
       border: none;
-      border-top: 1px solid #E5E9F3;
+      border-top: 1px solid #e5e9f3;
       color: rgba(30, 44, 79, 0.8);
       font-weight: 500;
       font-size: 16px;

@@ -67,7 +67,7 @@ function MainLayout(props: MainLayoutScreenProps) {
               key: '3',
               icon: <Avatar src={usersIcon} shape="square" className="icon-style" size={18} />,
               label: (
-                <Link to={ROUTES.HOME_SCREEN}>Users</Link>
+                <Link to={"/target-audience"}>Users</Link>
               ),
             },
             {

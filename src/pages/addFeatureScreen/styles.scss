@@ -94,7 +94,7 @@
     transition: all 0.5s;
     &:focus {
       bottom: 0px;
-      background: #ffffff;
+      background: $white;
       border: 2px solid $theme-primary;
       outline: none;
       box-shadow: none;
@@ -169,10 +169,6 @@
         border-color: $theme-primary;
       }
     }
-
-    .ant-select-selection-search-input {
-      background-color: red;
-    }
   }
 }
 
@@ -214,20 +210,6 @@
   }
 }
 
-.breadcrumbs {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 23px;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  color: rgba($text-color, 64%);
-  span {
-    &:nth-child(2) {
-      color: $theme-primary;
-    }
-  }
-}
 .feature-created-section {
   .share-card-container {
     justify-content: flex-end;
@@ -254,7 +236,7 @@
 .feature-tabs {
   margin-top: 15px;
 
-  .ant-tabs {
+  .ant-tabs-tab-btn {
     font-weight: 600;
     font-size: 14px;
     line-height: 16px;

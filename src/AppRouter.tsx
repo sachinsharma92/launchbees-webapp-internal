@@ -4,6 +4,7 @@ import { lazy, Suspense, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginSuccess from './pages/auth/loginSuccess/loginSuccess';
+import TargetAudience from './pages/targetAudience/TargetAudience';
 import * as ROUTES from './router/routes';
 
 /**
@@ -27,6 +28,7 @@ const AppRouter = () => {
                     <Routes>
                         <Route path={ROUTES.HOME_SCREEN} element={<HomeScreen />} />
                         <Route path={ROUTES.LOGIN_SCREEN} element={<SignupScreen />} />
+                        <Route path={"/target-audience"} element={<TargetAudience />} />
                         <Route path={ROUTES.SIGNUP_SCREEN} element={<LoginScreen />} />
                         <Route path={ROUTES.ADD_FEATURE} element={<AddFeatureScreen />} />
                         <Route path={ROUTES.NEW_LOGIN_SCREEN} element={<NewLoginScreen />} />
