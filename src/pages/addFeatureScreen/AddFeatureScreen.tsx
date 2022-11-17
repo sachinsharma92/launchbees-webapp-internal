@@ -93,8 +93,7 @@ const AddFeatureScreen = () => {
                       {
                         packages_cmd?.map((curElm, i) => {
                           return (
-                            <CopyField key={i} title={curElm.package_title} cmdVal={curElm.code_cmd} />
-
+                            <CopyField key={i} title={curElm.package_title} cmdVal={curElm.code_cmd} className={curElm.className} />
                           )
                         })
 
@@ -209,18 +208,15 @@ const AddFeatureScreen = () => {
                       </div>
                     </div>
                     <div className="analytics">
-                      {/* <Input type="button" value={"advance_analytics"} className='field-input' />
-                      <img src={copy_icon} alt="copy-icon" /> */}
-                      {/* <Input.Group compact> */}
-                      <Input
-
-                        defaultValue="advance_analytics"
-                        className='field-input copy-text'
-                      />
-                      <Tooltip title="copy url">
-                        <Button icon={<CopyOutlined />} />
-                      </Tooltip>
-                      {/* </Input.Group> */}
+                      <Input.Group compact>
+                        <Input
+                          defaultValue="advance_analytics"
+                          className="field-input"
+                        />
+                        <Tooltip title="copy git url">
+                          <Button icon={<CopyOutlined />} />
+                        </Tooltip>
+                      </Input.Group>
                     </div>
                   </div>
                 </Form.Item>

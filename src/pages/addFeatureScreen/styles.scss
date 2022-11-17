@@ -45,14 +45,27 @@
       display: flex;
       align-items: center;
       position: relative;
+      border: 1px solid $border-primary;
+      border-radius: 6px;
+      padding: 0 22px;
+      height: 59px;
+      overflow: hidden;
+      margin-top: 5px;
+
+      .field-input {
+        margin: 0;
+        width: auto;
+        border: none;
+        padding: 0;
+        background: none;
+      }
 
       .ant-btn-default {
         background-color: transparent;
         width: auto;
-        position: absolute;
-        transform: translate(140px, 3px);
 
         .anticon-copy {
+          margin-left: 10px;
           svg {
             width: 12px;
             height: 13.3px;
@@ -92,6 +105,8 @@
     height: 59px;
     background-color: $white;
     transition: all 0.5s;
+    padding: 0 22px;
+
     &:focus {
       bottom: 0px;
       background: $white;
@@ -259,6 +274,10 @@
 // Package to copy react-tab
 .packages-to-copy {
   max-width: 554px;
+
+  .textarea-style .ant-input-group {
+    min-height: 200px;
+  }
 }
 
 .share-card-container {

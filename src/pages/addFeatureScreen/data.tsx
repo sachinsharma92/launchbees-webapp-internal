@@ -28,5 +28,6 @@ export const packages_cmd = [
     {
         package_title: "c. In App.js , import LBimporter",
         code_cmd: "import { withLaunchBes | from ‘ launchbees-react-client-sdk’ import Helloworld from ‘/.nHelloWorld’;",
+        className: "textarea-style"
     },
 ]

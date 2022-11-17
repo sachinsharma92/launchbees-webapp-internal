@@ -1,6 +1,6 @@
-import { UploadOutlined, UserOutlined, VideoCameraOutlined, DownloadOutlined } from '@ant-design/icons';
 import { Button, Layout, Menu, Avatar } from 'antd';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import ROUTES from '../../router';
 
 // Images
 import { LogoDark } from '../../assets/logo';
@@ -12,27 +12,18 @@ import organisationsIcon from "../../assets/icons/organisations.svg"
 import settingIcon from "../../assets/icons/setting.svg"
 import upgradeIcon from "../../assets/icons/upgrade.svg"
 import docsIcon from "../../assets/icons/docs.svg"
-
-import integrationIcon from "../../assets/icons/integration.svg"
 import guideIcon from "../../assets/icons/guide.svg"
 import questionIcon from "../../assets/icons/question.svg"
-
-import { Link } from 'react-router-dom';
-import ROUTES from '../../router';
 
 // styles
 import "./styles.scss";
 
-
 const { Header, Sider, Content } = Layout;
-
 interface MainLayoutScreenProps {
   children: any
 }
 
 function MainLayout(props: MainLayoutScreenProps) {
-
-  const [collapsed, setCollapsed] = useState(false);
 
   return (
     <Layout>
@@ -60,7 +51,7 @@ function MainLayout(props: MainLayoutScreenProps) {
               key: '2',
               icon: <Avatar src={featureIcon} shape="square" className="icon-style" size={18} />,
               label: (
-                <Link to={ROUTES.FEATURE_SCREEN}>Feature</Link>
+                <Link to={ROUTES.ADD_FEATURE}>Feature</Link>
               ),
             },
             {
