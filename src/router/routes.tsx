@@ -7,6 +7,9 @@ export const FORGOT_SCREEN = "/forgot-password";
 export const LOGIN_SUCCESS = "/loginsuccess"
 export const ADD_FEATURE = "/add-feature"
 export const FEATURE_SCREEN = "/feature"
+export const ORGANISATIONS_SCREEN = "/organisations"
+export const ORGANISATION_ACTIVITY_SCREEN = "/organisations/activity"
+
 
 
 

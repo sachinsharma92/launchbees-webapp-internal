@@ -28,56 +28,56 @@ function MainLayout(props: MainLayoutScreenProps) {
   return (
     <Layout>
       <Sider className='theme-sidebar'>
-        <div className="logo-sec">
-          <LogoDark className="logo" />
+        <div className='sidebar-first'>
+          <div className="logo-sec">
+            <LogoDark className="logo" />
+          </div>
+          <div className="download-btn">
+            <Button><Avatar className='theme-style'>M</Avatar>PreProd  <Avatar src={arrowIcon} className="icon-style" size={18} /></Button>
+          </div>
+          <Menu
+            mode="inline"
+            defaultSelectedKeys={['1']}
+            items={[
+              {
+                key: '1',
+                icon: <Avatar src={homeIcon} shape="square" className="icon-style" size={18} />,
+                label: (
+                  <Link to={ROUTES.HOME_SCREEN}>Home</Link>
+                ),
+              },
+              {
+                key: '2',
+                icon: <Avatar src={featureIcon} shape="square" className="icon-style" size={18} />,
+                label: (
+                  <Link to={ROUTES.ADD_FEATURE}>Feature</Link>
+                ),
+              },
+              {
+                key: '3',
+                icon: <Avatar src={usersIcon} shape="square" className="icon-style" size={18} />,
+                label: (
+                  <Link to={"/target-audience"}>Users</Link>
+                ),
+              },
+              {
+                key: '4',
+                icon: <Avatar src={organisationsIcon} shape="square" className="icon-style" size={18} />,
+                label: (
+                  <Link to={ROUTES.ORGANISATIONS_SCREEN}>Organisations</Link>
+                ),
+              },
+              {
+                key: '5',
+                icon: <Avatar src={settingIcon} shape="square" className="icon-style" size={18} />,
+                label: (
+                  <Link to={ROUTES.HOME_SCREEN}>Settings</Link>
+                ),
+              },
+            ]}
+          >
+          </Menu>
         </div>
-
-        <div className="download-btn">
-          <Button><Avatar className='theme-style'>M</Avatar>PreProd  <Avatar src={arrowIcon} className="icon-style" size={18} /></Button>
-        </div>
-
-        <Menu
-          mode="inline"
-          defaultSelectedKeys={['1']}
-          items={[
-            {
-              key: '1',
-              icon: <Avatar src={homeIcon} shape="square" className="icon-style" size={18} />,
-              label: (
-                <Link to={ROUTES.HOME_SCREEN}>Home</Link>
-              ),
-            },
-            {
-              key: '2',
-              icon: <Avatar src={featureIcon} shape="square" className="icon-style" size={18} />,
-              label: (
-                <Link to={ROUTES.ADD_FEATURE}>Feature</Link>
-              ),
-            },
-            {
-              key: '3',
-              icon: <Avatar src={usersIcon} shape="square" className="icon-style" size={18} />,
-              label: (
-                <Link to={"/target-audience"}>Users</Link>
-              ),
-            },
-            {
-              key: '4',
-              icon: <Avatar src={organisationsIcon} shape="square" className="icon-style" size={18} />,
-              label: (
-                <Link to={ROUTES.HOME_SCREEN}>Organisations</Link>
-              ),
-            },
-            {
-              key: '5',
-              icon: <Avatar src={settingIcon} shape="square" className="icon-style" size={18} />,
-              label: (
-                <Link to={ROUTES.HOME_SCREEN}>Settings</Link>
-              ),
-            },
-          ]}
-        >
-        </Menu>
 
         <div className="user-btn">
           <Button type="link"><Avatar src="https://joeschmoe.io/api/v1/random" size={40}>M</Avatar>Jane Smith <Avatar src={arrowIcon} className="icon-style" size={18} /></Button>

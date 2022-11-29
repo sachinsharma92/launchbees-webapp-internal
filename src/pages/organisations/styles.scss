@@ -1,0 +1,136 @@
+// variables
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+// Homepage style
+.organisation-style {
+  .btn-right {
+    display: flex;
+    justify-content: flex-end;
+
+    .btn-plus {
+      height: 44px;
+    }
+  }
+
+  .head-section {
+    .description {
+      font-size: 16px;
+      margin-top: 8px;
+    }
+  }
+
+  .alert-info {
+    margin-top: 20px;
+  }
+
+  .table-data {
+    margin-top: 28px;
+  }
+
+  .table-card-design {
+    margin-top: 30px;
+
+    .head-section {
+      background: $gray-f9;
+      border-bottom: 1px solid $border-primary;
+      padding: 10px 20px;
+    }
+
+    .ant-card-body {
+      padding: 0;
+    }
+  }
+
+  .search-section {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+
+    .ant-input-search {
+      position: relative;
+      border: 1px solid #e5e9f3;
+      border-radius: 8px;
+      overflow: hidden;
+
+      .ant-input-affix-wrapper {
+        border: none;
+        padding-left: 38px;
+      }
+    }
+
+    .ant-input-group-addon {
+      position: absolute;
+      top: 12px;
+      left: 10px !important;
+      z-index: 1;
+
+      .ant-btn-default {
+        height: auto;
+        border: none;
+        background: none;
+      }
+    }
+
+    .ant-input {
+      height: 40px;
+    }
+
+    .filter-btn {
+      background: none;
+      padding: 0;
+      width: auto;
+      color: $theme-primary;
+    }
+  }
+
+  .name-section {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+  }
+
+  .account-manager-section {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+  }
+
+  .features-section {
+    p {
+      margin: 0;
+    }
+  }
+
+  .info-card {
+    margin-top: 30px;
+
+    .ant-card-meta-title {
+      margin: 0;
+    }
+
+    .subtitle {
+      margin: 0;
+    }
+
+    .flex-section {
+      display: flex;
+      align-items: flex-start;
+      gap: 0 100px;
+    }
+
+    .account-manager {
+      display: flex;
+    }
+
+    .features-sec {
+      display: flex;
+      flex-direction: column;
+
+      .item {
+        display: flex;
+        gap: 20px 155px;
+      }
+    }
+  }
+}

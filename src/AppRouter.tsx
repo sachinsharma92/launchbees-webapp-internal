@@ -16,6 +16,8 @@ const LoginScreen = lazy(() => import(/* webpackChunkName: "LoginScreen" */ './p
 const SignupScreen = lazy(() => import(/* webpackChunkName: "LoginScreen" */ './pages/auth/signup/signupScreen'));
 const NewLoginScreen = lazy(() => import(/* webpackChunkName: "LoginScreen" */ './pages/auth/newLogin/newLoginScreen'));
 const ForgotScreen = lazy(() => import(/* webpackChunkName: "LoginScreen" */ './pages/auth/forgotPassword/forgotScreen'));
+const OrganisationScreen = lazy(() => import(/* webpackChunkName: "LoginScreen" */ './pages/organisations/organisationScreen'));
+const OrganisationActivity = lazy(() => import(/* webpackChunkName: "LoginScreen" */ './pages/organisations/activity'));
 
 const AppRouter = () => {
     const isLoggedIn = useSelector((state) => get(state, 'auth.isLoggedIn'));
@@ -34,6 +36,9 @@ const AppRouter = () => {
                         <Route path={ROUTES.NEW_LOGIN_SCREEN} element={<NewLoginScreen />} />
                         <Route path={ROUTES.FORGOT_SCREEN} element={<ForgotScreen />} />
                         <Route path={ROUTES.LOGIN_SUCCESS} element={<LoginSuccess />} />
+                        <Route path={ROUTES.ORGANISATIONS_SCREEN} element={<OrganisationScreen />} />
+                        <Route path={ROUTES.ORGANISATION_ACTIVITY_SCREEN} element={<OrganisationActivity />} />
+
                     </Routes>
                 </Router>
             </Suspense>

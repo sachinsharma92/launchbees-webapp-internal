@@ -78,7 +78,7 @@ function LoginScreen(props: LoginScreenProps) {
 				</div>
 			</div>
 			LoginScreen
-            <Button onClick={onLogin} >Login</Button>
+			<Button onClick={onLogin} >Login</Button>
 		</AuthLayout>
 	)
 }

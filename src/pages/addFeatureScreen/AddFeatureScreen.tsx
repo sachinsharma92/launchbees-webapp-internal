@@ -71,7 +71,7 @@ const AddFeatureScreen = () => {
         <Breadcrumb head={"Feature"} sub_head={"Feature Code"} />
         {/*  */}
         <Row gutter={[77, 0]} className="feature-created-section">
-          <Col md={12}>
+          <Col md={14}>
             <Row>
               <Col md={24}>
                 <div className="feature-created-header">
@@ -85,7 +85,7 @@ const AddFeatureScreen = () => {
                   onChange={onChange}
                   style={{ display: "flex", justifyContent: "space-between" }}
                 >
-                  <TabPane tab="JavaScript" key="1" style={{ width: "50%" }}>
+                  <TabPane tab="JavaScript" key="1">
                     Content of Tab Pane 1
                   </TabPane>
                   <TabPane tab="React" key="2">
@@ -107,10 +107,10 @@ const AddFeatureScreen = () => {
               </Col>
             </Row>
           </Col>
-          <Col md={12}>
+          <Col md={10}>
             <Row gutter={[0, 21]} className="share-card-container">
               <Col className='code-card'>
-                <Card style={{ width: 385 }} extra={<img className='card-image' src={share_icon} alt="img" />} title="Invite your Engineering Team" className="my-card">
+                <Card extra={<img className='card-image' src={share_icon} alt="img" />} title="Invite your Engineering Team" className="my-card">
                   <Paragraph className="detail description">Share the invite to your enginering team.</Paragraph>
                   <div className="card-input">
                     <Input defaultValue={"ayush.prshr9@gmail.com"} />
@@ -138,7 +138,7 @@ const AddFeatureScreen = () => {
                 </Card>
               </Col>
               <Col className='code-card'>
-                <Card style={{ width: 385 }} extra={<img className='card-image' src={share_icon} alt="img" />} title="Invite your Engineering Team" className="my-card">
+                <Card extra={<img className='card-image' src={share_icon} alt="img" />} title="Invite your Engineering Team" className="my-card">
                   <Paragraph className="detail description">You can share the code snippet from here.</Paragraph>
                   <div className="card-input search-card">
                     <Input.Search
@@ -169,7 +169,7 @@ const AddFeatureScreen = () => {
           </div>
 
           <Row className='feature-form' gutter={[82, 0]}>
-            <Col className="feature-form-data" md={12}>
+            <Col className="feature-form-data" md={14}>
               <Form
                 name="basic"
                 labelCol={{
@@ -287,18 +287,18 @@ const AddFeatureScreen = () => {
               </Form>
             </Col>
             {/* Featured-cards */}
-            <Col md={12}>
-              <Row gutter={[0, 40]} className='feature-container'>
+            <Col md={10}>
+              <div className='feature-container'>
                 {
                   featureCard?.map((curElm, i) => {
                     return (
-                      <Col key={i} className="feature-card feature__flag-dependency">
+                      <div key={i} className="feature-card feature__flag-dependency">
                         <FeatureCard title={curElm.title} para={curElm.description} para1={curElm.description2} img_url={curElm.icon} />
-                      </Col>
+                      </div>
                     )
                   })
                 }
-              </Row>
+              </div>
             </Col>
           </Row>
         </div>

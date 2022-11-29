@@ -36,7 +36,9 @@ body {
   background: $white;
 
   .site-content {
-    padding: 65px;
+    padding: 25px;
+    height: calc(100vh - 234px);
+    overflow-x: scroll;
   }
 }
 
@@ -50,6 +52,15 @@ body {
   // overflow-x: hidden;
 
   overflow-x: hidden;
+}
+
+.link-style {
+  color: $theme-primary;
+  text-transform: capitalize;
+
+  &:hover {
+    color: rgba($theme-primary, 0.8);
+  }
 }
 
 // Typography Style
