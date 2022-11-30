@@ -19,7 +19,7 @@ import Breadcrumb from "../../components/breadcrumb/Breadcrumb"
 const { TabPane } = Tabs  //Antd Tabs
 const { Paragraph } = Typography
 
-const AddFeatureScreen = () => {
+const AddFeature = () => {
 
   const [featureAdded, setFeatureAdded] = useState<boolean>(false);
 
@@ -53,9 +53,6 @@ const AddFeatureScreen = () => {
   }
 
   const onSearch = (value: string) => console.log(value);
-
-
-
 
   if (featureAdded) {
     return (
@@ -193,12 +190,6 @@ const AddFeatureScreen = () => {
                 </Form.Item>
                 <Form.Item
                   name="feature_ID"
-                // rules={[
-                //   {
-                //     required: true,
-                //     message: 'Please copy your id!',
-                //   },
-                // ]}
                 >
                   <div className='feature-id'>
                     <div className="field-head">
@@ -222,12 +213,6 @@ const AddFeatureScreen = () => {
                 </Form.Item>
                 <Form.Item
                   name="status_toggle"
-                // rules={[
-                //   {
-                //     required: true,
-                //     message: 'Please set your status!',
-                //   },
-                // ]}
                 >
                   <div className='status-toggle'>
                     <span className="feature-input-title">Default Status at the start</span>
@@ -239,36 +224,18 @@ const AddFeatureScreen = () => {
                 </Form.Item>
                 <Form.Item
                   name="description"
-                // rules={[
-                //   {
-                //     required: true,
-                //     message: 'Please input your description!',
-                //   },
-                // ]}
                 >
                   <span className="feature-input-title">Description (optional)</span>
                   <Input placeholder='Fill in the label' className='field-input' />
                 </Form.Item>
                 <Form.Item
                   name="module"
-                // rules={[
-                //   {
-                //     required: true,
-                //     message: 'Please input your module!',
-                //   },
-                // ]}
                 >
                   <span className="feature-input-title">Module</span>
                   <Input placeholder='Add Tags' className='field-input' />
                 </Form.Item>
                 <Form.Item
                   name="depends"
-                // rules={[
-                //   {
-                //     required: true,
-                //     message: 'Please input your depends!',
-                //   },
-                // ]}
                 >
                   <div className='add-remove-input'>
                     <span className="feature-input-title">Depends On <img src={depend_icon} alt="depend-icon" className='warning-icons' /></span>
@@ -307,4 +274,4 @@ const AddFeatureScreen = () => {
   }
 }
 
-export default AddFeatureScreen
+export default AddFeature

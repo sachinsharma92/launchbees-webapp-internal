@@ -6,8 +6,6 @@ import ROUTES from '../../router';
 import { LogoDark } from '../../assets/logo';
 import arrowIcon from "../../assets/icons/up-down.svg"
 import featureIcon from "../../assets/icons/feature.svg"
-import homeIcon from "../../assets/icons/home.svg"
-import usersIcon from "../../assets/icons/users.svg"
 import organisationsIcon from "../../assets/icons/organisations.svg"
 import settingIcon from "../../assets/icons/setting.svg"
 import upgradeIcon from "../../assets/icons/upgrade.svg"
@@ -41,34 +39,20 @@ function MainLayout(props: MainLayoutScreenProps) {
             items={[
               {
                 key: '1',
-                icon: <Avatar src={homeIcon} shape="square" className="icon-style" size={18} />,
+                icon: <Avatar src={featureIcon} shape="square" className="icon-style" size={18} />,
                 label: (
-                  <Link to={ROUTES.HOME_SCREEN}>Home</Link>
+                  <Link to={ROUTES.HOME_SCREEN}>Feature</Link>
                 ),
               },
               {
                 key: '2',
-                icon: <Avatar src={featureIcon} shape="square" className="icon-style" size={18} />,
-                label: (
-                  <Link to={ROUTES.ADD_FEATURE}>Feature</Link>
-                ),
-              },
-              {
-                key: '3',
-                icon: <Avatar src={usersIcon} shape="square" className="icon-style" size={18} />,
-                label: (
-                  <Link to={"/target-audience"}>Users</Link>
-                ),
-              },
-              {
-                key: '4',
                 icon: <Avatar src={organisationsIcon} shape="square" className="icon-style" size={18} />,
                 label: (
                   <Link to={ROUTES.ORGANISATIONS_SCREEN}>Organisations</Link>
                 ),
               },
               {
-                key: '5',
+                key: '3',
                 icon: <Avatar src={settingIcon} shape="square" className="icon-style" size={18} />,
                 label: (
                   <Link to={ROUTES.HOME_SCREEN}>Settings</Link>

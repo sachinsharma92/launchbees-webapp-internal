@@ -1,12 +1,18 @@
-import { Button, Checkbox, Form, Input, Divider, Row, Col } from 'antd';
-import { Typography } from 'antd';
+import { Button, Checkbox, Form, Input, Divider, Typography } from 'antd';
+import get from 'lodash/get';
+import { useDispatch, useSelector } from 'react-redux';
+import { Navigate, useSearchParams } from 'react-router-dom';
+import { login } from '../../../redux/actions/userActions';
+import { IAppState } from '../../../redux/reducers/indexReducer';
 import { AuthLayout } from '../../../common/authLayout/authLayout';
 import { AppleIcon, GoogleIcon } from '../../../assets/logo';
+import { API_BASE_URL } from '../../../remote/axios';
+import { LOGIN_WITH_GOOGLE } from '../../../remote/apis/apiRoutes';
 
 // Styles
 import './styles.scss';
-import { API_BASE_URL } from '../../../remote/axios';
-import { LOGIN_WITH_GOOGLE } from '../../../remote/apis/apiRoutes';
+import ROUTES from '../../../router';
+
 
 const { Title, Paragraph } = Typography;
 
@@ -27,9 +33,21 @@ function SignupScreen(props: SignupScreenProps) {
 	};
 
 	const onLoginWithGoogle = () => {
-		window.open(API_BASE_URL+LOGIN_WITH_GOOGLE, '_blank', 'noopener,noreferrer');
+		window.open(API_BASE_URL + LOGIN_WITH_GOOGLE, '_blank', 'noopener,noreferrer');
 	}
 
+
+	const dispatch = useDispatch();
+	let [searchParams, setSearchParams] = useSearchParams();
+	let isLoggedIn = useSelector((state: IAppState) => get(state, 'userState.accessToken'));
+
+	const onLogin = () => {
+		dispatch(login(987654321, '2932'));
+	}
+
+	if (isLoggedIn) {
+		return <Navigate to={searchParams.get("redirect") || ROUTES.HOME_SCREEN} />;
+	}
 	return (
 		<AuthLayout>
 			<div className='signup-page-section'>
@@ -45,26 +63,6 @@ function SignupScreen(props: SignupScreenProps) {
 					onFinishFailed={onFinishFailed}
 					autoComplete="off"
 				>
-					{/* <Row gutter={16}>
-						<Col sm={12}>
-							<Form.Item
-								label="First name"
-								name="firstname"
-								rules={[{ message: 'Please input your username!' }]}
-							>
-								<Input />
-							</Form.Item>
-						</Col>
-						<Col sm={12}>
-							<Form.Item
-								label="Last Name"
-								name="lastname"
-								rules={[{ message: 'Please input your username!' }]}
-							>
-								<Input />
-							</Form.Item>
-						</Col>
-					</Row> */}
 
 					<Form.Item
 						label="Email Address"
@@ -77,7 +75,7 @@ function SignupScreen(props: SignupScreenProps) {
 					<Form.Item
 						label="Password"
 						name="password"
-						rules={[{message: 'Please input your password!' }]}
+						rules={[{ message: 'Please input your password!' }]}
 					>
 						<Input.Password />
 					</Form.Item>
@@ -89,7 +87,7 @@ function SignupScreen(props: SignupScreenProps) {
 				</Form>
 
 				<div className="button-section-secondary">
-					<Button shape='round' type='primary'>
+					<Button shape='round' onClick={onLogin} type='primary'>
 						Login
 					</Button>
 					<Paragraph>
@@ -108,7 +106,8 @@ function SignupScreen(props: SignupScreenProps) {
 				</div>
 			</div>
 			{/* LoginScreen
-            <Button onClick={onLogin} >Login</Button> */}
+            */}
+			<Button onClick={onLogin} >Login</Button>
 		</AuthLayout>
 	)
 }

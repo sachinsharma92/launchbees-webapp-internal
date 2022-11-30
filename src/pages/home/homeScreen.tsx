@@ -1,103 +1,143 @@
-import { Space, Table, Tag, Button, Col, Row, Card } from 'antd';
+import { Space, Table, Tag, Button, Col, Row, Card, Input, Switch, Menu, Dropdown } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
-import { useDispatch } from 'react-redux';
 import MainLayout from '../../common/mainLayout';
 import requireAuth from '../../hocs/requireAuth'
-import { logout } from '../../redux/actions/userActions';
-import { PlusCircleOutlined } from '@ant-design/icons';
+import { ArrowRightOutlined, FilterOutlined, MoreOutlined, PlusCircleOutlined, SmileOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 // Styles
 import './styles.scss';
-import { Link } from 'react-router-dom';
 
-
+const { Search } = Input;
+const onSearch = (value: string) => console.log(value);
+const onChange = (checked: boolean) => {
+	console.log(`switch to ${checked}`);
+};
 interface DataType {
 	key: string;
 	name: string;
 	tags: string[];
-	targetUsers: string;
-	createdOn: number;
+	targetUsers: any;
+	createdOn: string;
 }
 
+
+const menu = (
+	<Menu
+		items={[
+			{
+				key: '1',
+				label: (
+					<div className='menu-bg-style item-custom'>
+						Feature Code
+					</div>
+				),
+				disabled: true,
+			},
+			{
+				key: '2',
+				label: (
+					<a className='item-custom' target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
+						Edit Feature
+					</a>
+				),
+			},
+		]}
+	/>
+);
 
 const columns: ColumnsType<DataType> = [
 	{
 		title: 'Name',
 		dataIndex: 'name',
 		key: 'name',
-		render: text => <a>{text}</a>,
+		render: text => <div>
+			<h5 className="title5">Feature name</h5>
+			{text}
+		</div>,
+		sorter: {
+			multiple: 3,
+		},
 	},
 	{
 		title: 'Tags',
 		key: 'tags',
 		dataIndex: 'tags',
 		render: (_, { tags }) => (
-			<>
+			<div className='tag-sec'>
 				{tags.map(tag => {
-					let color = tag.length > 5 ? 'geekblue' : 'green';
-					if (tag === 'loser') {
-						color = 'volcano';
-					}
 					return (
-						<Tag color={color} key={tag}>
-							{tag.toUpperCase()}
+						<Tag key={tag} className='tag-default'>
+							{tag}
 						</Tag>
 					);
 				})}
-			</>
+			</div>
 		),
 	},
 	{
 		title: 'Target users',
 		dataIndex: 'targetUsers',
 		key: 'targetUsers',
-	},
-	{
-		title: 'Action',
-		key: 'action',
-		render: (_, record) => (
-			<Space size="middle">
-				<a>Invite {record.name}</a>
-				<a>Delete</a>
-			</Space>
-		),
+		render: text => <div>
+			<Button type="primary" shape="round">Define <ArrowRightOutlined /></Button>
+			<div className='target-users'>
+				5 Enterprise
+				<small>{text}</small>
+			</div>
+
+		</div>,
 	},
 	{
 		title: 'Created on',
 		dataIndex: 'createdOn',
 		key: 'createdOn',
 	},
+	{
+		title: 'Status',
+		key: 'action',
+		render: (_, record) => (
+			<Space size="middle">
+				<Switch defaultChecked onChange={onChange} />
+				<Dropdown overlay={menu} overlayClassName="status-dropdown">
+					<Button type="link" className='dropdown-btn-link' onClick={e => e.preventDefault()}>
+						<MoreOutlined />
+					</Button>
+				</Dropdown>
+			</Space>
+		),
+	},
 ];
 
 const data: DataType[] = [
 	{
 		key: '1',
-		name: 'John Brown',
-		createdOn: 32,
-		targetUsers: 'New York No. 1 Lake Park',
-		tags: ['nice', 'developer'],
+		name: 'chat_feature',
+		targetUsers: '20 Individual Users',
+		createdOn: '5/12/2022',
+		tags: ['Tag 1', 'Tag 2'],
 	},
 	{
 		key: '2',
-		name: 'Jim Green',
-		createdOn: 42,
-		targetUsers: 'London No. 1 Lake Park',
-		tags: ['loser'],
+		name: 'chat_feature',
+		targetUsers: '20 Individual Users',
+		createdOn: '5/12/2022',
+		tags: ['Tag 1', 'Tag 2'],
 	},
 	{
 		key: '3',
-		name: 'Joe Black',
-		createdOn: 32,
-		targetUsers: 'Sidney No. 1 Lake Park',
-		tags: ['cool', 'teacher'],
+		name: 'chat_feature',
+		targetUsers: '20 Individual Users',
+		createdOn: '5/12/2022',
+		tags: ['Tag 1', 'Tag 2'],
 	},
 ];
 
 function HomeScreen() {
-	const dispatch = useDispatch();
-	const onLogout = () => {
-		dispatch(logout());
-	}
+	// const dispatch = useDispatch();
+	// const onLogout = () => {
+	// 	dispatch(logout());
+	// }
 
 	return (
 		<MainLayout>
@@ -106,7 +146,7 @@ function HomeScreen() {
 					<Row align='middle'>
 						<Col sm={14}>
 							<div className="info-section">
-								<h3 className="title3">
+								<h3 className="title3 title-semibold">
 									Feature Flags
 								</h3>
 								<p className="description">
@@ -130,14 +170,33 @@ function HomeScreen() {
 					<div className='alert-info'>SDK is not installed. Follow our <span> integration Guide</span></div>
 				</div>
 
-				<div className="table-data">
+				<div className="table-data table-card-design">
 					<Card>
+						<div className="head-section">
+							<Row align='middle'>
+								<Col sm={18}>
+									<div className="info-section">
+										<h4 className="title4">
+											Flags
+										</h4>
+									</div>
+								</Col>
+								<Col sm={6}>
+									<div className="search-section">
+										<Search placeholder="Search" allowClear onSearch={onSearch} />
+										<Button className='filter-btn'>
+											<FilterOutlined />
+										</Button>
+									</div>
+								</Col>
+							</Row>
+						</div>
 						<Table columns={columns} dataSource={data} />
 					</Card>
 				</div>
 			</div>
 			{/* HomeScreen */}
-			<Button onClick={onLogout}>Logout</Button>
+			{/* 			<Button onClick={onLogout}>Logout</Button> */}
 		</MainLayout>
 	)
 }

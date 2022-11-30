@@ -1,4 +1,4 @@
-import { Card, Col, Row, Table, Input, Button, Image, Avatar } from 'antd';
+import { Card, Col, Row, Table, Input, Button, Avatar } from 'antd';
 import type { ColumnsType, TableProps } from 'antd/es/table';
 import MainLayout from '../../common/mainLayout';
 import { FilterOutlined } from '@ant-design/icons';
