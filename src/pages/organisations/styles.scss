@@ -30,14 +30,13 @@
 
   .name-section {
     display: flex;
-    align-items: center;
-    gap: 0 10px;
+    flex-direction: column;
+    gap: 5px 0;
   }
 
   .account-manager-section {
     display: flex;
     align-items: center;
-    gap: 0 10px;
   }
 
   .features-section {
@@ -70,10 +69,34 @@
     .features-sec {
       display: flex;
       flex-direction: column;
+      gap: 30px 0;
 
       .item {
         display: flex;
+        justify-content: space-between;
         gap: 20px 155px;
+      }
+
+      .blue {
+        color: $theme-primary;
+      }
+
+      .green {
+        color: $theme-success;
+      }
+
+      .error {
+        color: $theme-error;
+      }
+    }
+
+    .primary-sec {
+      display: flex;
+      flex-direction: column;
+      gap: 10px 0;
+
+      .name {
+        margin-left: 5px;
       }
     }
   }

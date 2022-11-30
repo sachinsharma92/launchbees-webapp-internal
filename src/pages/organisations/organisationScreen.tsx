@@ -111,7 +111,7 @@ function OrganisationScreen() {
 					<Row align='middle'>
 						<Col sm={12}>
 							<div className="info-section">
-								<h3 className="title3">
+								<h3 className="title3 title-semibold">
 									Organisations
 								</h3>
 								<p className="description">
@@ -128,14 +128,14 @@ function OrganisationScreen() {
 							<Row align='middle'>
 								<Col sm={18}>
 									<div className="info-section">
-										<h4 className="title4">
-											Enable features for customers
+										<h4 className="title4 title-semibold">
+											Features by Users
 										</h4>
 									</div>
 								</Col>
 								<Col sm={6}>
 									<div className="search-section">
-										<Search placeholder="input search text" allowClear onSearch={onSearch} />
+										<Search placeholder="Search" allowClear onSearch={onSearch} />
 										<Button className='filter-btn'>
 											<FilterOutlined />
 										</Button>
